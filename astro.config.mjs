@@ -10,7 +10,7 @@ import db from "@astrojs/db"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://cheery-puffpuff-90ab8a.netlify.app/",
+  site: "https://integri.netlify.app/",
   integrations: [
     alpinejs(),
     sitemap(),
