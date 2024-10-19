@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --breaker-bay: 180deg 77% 37%;
+    --shark: 0deg 0% 13%;
+    --catskill-white: 198deg 100% 98%;
+    --alto: 0deg 0% 87%;
+    --blue-chill: 180deg 60% 34%;
+    --tiber: 180deg 48% 16%;
+    --affair: 270deg 39% 40%;
+    --pale-sky: 213deg 9% 45%;
+  }
+
+  [x-cloak] {
+    @apply hidden;
+  }
+
+  body {
+    @apply font-sans;
+  }
+}

@@ -1,0 +1,93 @@
+---
+interface Props {
+  asChild?: boolean
+  variant?: "primary" | "secondary" | "accent" | "outline" | "ghost" | "link"
+  size?: "sm" | "md" | "lg" | "icon"
+  block?: boolean
+  href?: string
+  class?: string
+  [x: string]: any
+}
+
+const {
+  variant = "primary",
+  size = "md",
+  asChild,
+  block = false,
+  href,
+  class: className,
+  ...rest
+} = Astro.props as Props
+
+const variants = {
+  primary:
+    "bg-shark border-shark text-white hover:border-blue-chill hover:bg-blue-chill",
+  secondary:
+    "bg-pale-sky text-white hover:bg-blue-chill hover:border-blue-chill border-pale-sky",
+  accent:
+    "bg-blue-chill border-blue-chill text-white: hover:bg-shark hover:border-shark",
+  outline:
+    "bg-transparent border-2 border-white hover:bg-shark hover:border-shark hover:text-white",
+  link: "text-shark border-transparent hover:underline underline-offset-4 border-transparent hover:text-primary",
+  ghost: "border-transparent bg-transparent text-current hover:text-shark"
+}
+
+const sizes = {
+  sm: " rounded-md px-6 py-3 text-xs",
+  md: "px-8 py-4 rounded-md",
+  lg: "rounded-md py-5 px-10",
+  icon: "px-5 py-2.5"
+}
+
+const defaultClasses = [
+  "inline-flex",
+  "items-center",
+  "justify-center",
+  "whitespace-nowrap",
+  "rounded-md",
+  "text-sm",
+  "font-medium",
+  "border",
+  "transition-colors",
+  "focus-visible:outline-none",
+  "focus-visible:ring-1",
+  "focus-visible:ring-ring",
+  "disabled:pointer-events-none",
+  "disabled:opacity-50"
+]
+---
+
+<>
+  {
+    asChild && (
+      <a
+        {href}
+        class:list={[
+          ...defaultClasses,
+          variants[variant],
+          sizes[size],
+          block && "w-full",
+          className
+        ]}
+        {...rest}>
+        <slot />
+      </a>
+    )
+  }
+
+  {
+    !asChild && (
+      <button
+        class:list={[
+          ...defaultClasses,
+          variants[variant],
+          sizes[size],
+          block && "w-full",
+          className
+        ]}
+        {...rest}>
+        <slot />
+      </button>
+    )
+  }
+</>

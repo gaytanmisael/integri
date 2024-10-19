@@ -1,0 +1,188 @@
+---
+import { Icon } from "astro-icon/components"
+
+import Button from "./ui/Button.astro"
+
+import Site from "@data/Site"
+import Menu from "@data/Menu"
+---
+
+<header id="main" class="bg-white z-50" x-data="{ open: false }">
+  <nav
+    class="container md:max-lg:max-w-full lg:container flex items-center justify-between py-6"
+    aria-label="Global">
+    <div class="flex lg:flex-1">
+      <a href="/" class="-m-1.5 p-1.5">
+        <span class="sr-only">Integrated HR Partners</span><!-- /.sr-only -->
+        <h4 class="text-xl font-bold leading-snug">Integrated HR Partners</h4>
+      </a><!-- /.-m-1 5 p-1 5 -->
+    </div><!-- /.flex lg:flex-1 -->
+    <div class="flex lg:hidden">
+      <Button variant="ghost" size="icon" @click="open=true">
+        <span class="sr-only">Open main menu</span><!-- /.sr-only -->
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          data-slot="icon">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </Button>
+    </div><!-- /.flex lg:hidden -->
+    <div class="hidden lg:flex lg:gap-x-12">
+      {
+        Menu.map(({ title, href, children }) => (
+          <>
+            {children && (
+              <div class="relative" x-data="{ dropdownOpen: false }">
+                <button @click="dropdownOpen = true" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-shark duration-300 hover:text-breaker-bay">
+                  {title}
+                  <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                    <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                
+                <div x-show.important="dropdownOpen" @click.away="dropdownOpen=false" x-cloak class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-alto" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duraiton-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-1" >
+                  <div class="p-4">
+                    {
+                      children.map(({ title, href, icon, description }) => (
+                      <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-alto/30">
+                      <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-accent/10 group-hover:bg-white">
+                        <Icon name={icon} class="h-6 w-6 text-accent group-hover:text-breaker-bay" />
+                      </div>
+                      <div class="flex-auto">
+                        <a {href} class="block font-semibold text-text">
+                          {title}
+                          <span class="absolute inset-0"></span>
+                        </a>
+                        <p class="mt-1 text-gray-600">{description}</p>
+                      </div>
+                    </div>
+                      ))
+                    }
+                  </div>
+                  <div class="grid grid-cols-2 divide-x divide-accent/1 bg-shark/5">
+                    <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-text hover:bg-alto duration-300">
+                      <svg class="h-5 w-5 flex-none text-breaker-bay" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                        <path fill-rule="evenodd" d="M2 10a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm6.39-2.908a.75.75 0 0 1 .766.027l3.5 2.25a.75.75 0 0 1 0 1.262l-3.5 2.25A.75.75 0 0 1 8 12.25v-4.5a.75.75 0 0 1 .39-.658Z" clip-rule="evenodd" />
+                      </svg>
+                      Try IntegriBot
+                    </a>
+                    <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-text hover:bg-alto duration-300">
+                      <svg class="h-5 w-5 flex-none text-breaker-bay" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                        <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd" />
+                      </svg>
+                      Need HR Solutions?
+                    </a>
+                  </div>
+                </div>
+              </div><!-- /.relative -->
+            )}
+
+            {!children && (
+              <a {href} class="text-sm font-semibold leading-6 text-shark duration-300 hover:text-breaker-bay">
+                {title}
+              </a>
+            )}
+          </>
+        ))
+      }
+    </div><!-- /.hidden lg:flex lg:gap-x-12 -->
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <Button asChild href="/app" variant="primary" class="gap-2">
+        Log In
+        <Icon name="lucide:arrow-right" size={16} />
+      </Button>
+    </div><!-- /.hidden lg:flex lg:flex-1 lg:justify-end -->
+  </nav><!-- /.container -->
+
+  <div class="lg:hidden" role="dialog" aria-modal="true" x-ref="dialog" x-show.important="open" x-cloak x-description="Mobile menu, show/hide based on menu open state.">
+    <!-- Background backdrop, show/hide based on slide-over state. -->
+    <div class="fixed inset-0 z-10"></div>
+    <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-alto" @click.away="open=false">
+      <div class="flex items-center justify-between">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
+        </a>
+        <button type="button" class="-m-2.5 rounded-md p-2.5 text-text" @click="open=false">
+          <span class="sr-only">Close menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-alto">
+          <div class="space-y-2 py-6">
+            {
+              Menu.map(({ title, href, children }) => (
+                <>
+
+                 {
+                  !children && (
+                  <a {href} class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-text hover:bg-alto/30">{title}</a>
+                  )
+                 } 
+
+                 {
+                  children && (
+                  <div class="-mx-3" x-data="{ open: false }">
+                    <button type="button" @click="open=!open" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-text hover:bg-alto/30" aria-controls="disclosure-1" aria-expanded="false">
+                    {title}
+                      <svg class="h-5 w-5 flex-none" :class="{ 'rotate-180': open }" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                        <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                      </svg>
+                    </button>
+                    <!-- 'Product' sub-menu, show/hide based on menu state. -->
+                    <div class="mt-2 space-y-2" id="disclosure-1" x-show.important="open">
+                    {
+                      children.map(({ title, href }) => (
+                        <a {href} class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-text hover:bg-alto/30">{title}</a>
+                      ))
+                    }
+                      
+                    </div>
+                  </div>
+                  )
+                 }
+
+                </>
+              ))
+            }
+
+
+          </div>
+          <div class="py-6">
+            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-text hover:bg-alto/30">Log in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+  .nav-sticky {
+    @apply fixed end-0 start-0 top-0 border-0 bg-white shadow-md duration-500 ease-in-out transition-all animate-headerBounce;
+  }
+</style>
+
+<script>
+  function n() {
+    const e = document.getElementById("main");
+    e != null && (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50 ? e.classList.add("nav-sticky") : e.classList.remove("nav-sticky"))
+}
+window.addEventListener("scroll", e => {
+    e.preventDefault(),
+    n()
+}
+);
+
+</script>

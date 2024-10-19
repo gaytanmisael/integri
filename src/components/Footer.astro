@@ -1,0 +1,106 @@
+---
+import { Icon } from "astro-icon/components"
+
+import Button from '@components/ui/Button.astro'
+
+import site from "@data/Site"
+import footer from "@data/Footer"
+
+const year = new Date().getFullYear()
+---
+
+<footer class="bg-tiber mt-16 md:mt-24 lg:mt-32">
+  <section class="pt-16">
+    <div class="container md:max-lg:max-w-full">
+      <div class="grid grid-cols-12 gap-x-8 gap-y-10">
+        <div class="col-span-12 lg:col-span-5 text-center sm:text-left">
+          <h2 class="text-4xl font-bold leading-8 -tracking-wide text-white sm:text-5xl">
+            Integrated HR Partners
+          </h2>
+          <p class="mt-5 text-white">
+            Integrated HR Partners: Your trusted ally simplifying human
+            resources, optimizing your workforce, and unlocking the true
+            potential of your business.
+          </p><!-- /.mt-5 text-center md:text-left -->
+          <form action="" class="mt-5 flex items-stretch justify-center sm:justify-start min-h-11">
+            <label for="emal-adress" class="sr-only">Email Address:</label>
+            <input type="search" name="search" placeholder="Search..." class="rounded-s-md inline-block px-4 outline-none">
+            <Button size="icon" class="rounded-s-none min-h-11">
+              <span class="sr-only">Search</span><!-- /.sr-only -->
+              <Icon name="lucide:search" size={16} />
+            </Button>
+          </form><!-- /.mt-5 -->
+        </div><!-- /.col-span-12 lg:col-span-4 -->
+        <div class="hidden  lg:block"></div><!-- /.relative -->
+        { 
+          footer.map(({ title, children }) => (
+            <div class:list={["col-span-12", "sm:col-span-4",  "lg:col-span-2", "text-center", "sm:text-left"]}>
+              <h4 class="text-white text-xl -tracking-wide font-bold">
+                {title}
+              </h4><!-- /.text-t -->
+              <ul class="mt-5 text-white space-y-4">
+                {
+                  children.map(({ title, href }) => (
+                    <li class="duration-300 hover:text-breaker-bay">
+                      <a {href}>{title}</a>
+                    </li><!-- / -->
+                  ))
+                }  
+              </ul><!-- /.mt- -->
+            </div>
+          ))
+        }
+      </div><!-- /.grid grid-cols-12 gap-x-8 gap-y-10 -->
+      <div class="mt-16 lg:flex lg:items-center space-y-6 lg:space-y-0 lg:justify-between ">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
+          <div class="inline-flex gap-2 justify-center lg:justify-start">
+            <Icon name="lucide:map-pin" class="text-white" size={20} />  
+            <span class="text-white">77 Fulham Street, London - UK</span><!-- /.text-white -->
+          </div><!-- /.flex gap-5 -->
+          <div class="inline-flex  gap-2 justify-center lg:justify-start">
+            <Icon name="lucide:mail" class="text-white" size={20} />  
+            <span class="text-white">hello@integratedhrptrs.com</span></div><!-- /.flex gap-5 -->
+          <div class="inline-flex gap-2 justify-center lg:justify-start sm:col-span-2 lg:col-span-1">
+            <Icon name="lucide:phone" class="text-white" size={20} />  
+            <span class="text-white">+1 951 729 0372</span>  
+          </div><!-- /.flex gap-5 -->
+        </div>
+        <div class="flex flex-row justify-center gap-6">
+          <span class="transition-all hover:-translate-y-2">
+            <Icon name="lucide:facebook" class="text-breaker-bay" size={24} />
+          </span>
+          <span class="transition-all hover:-translate-y-2">
+            <Icon name="lucide:twitter" class="text-breaker-bay" size={24} />
+          </span>
+          <span class="transition-all hover:-translate-y-2">
+            <Icon name="lucide:youtube" class="text-breaker-bay" size={24} />
+          </span>
+          <span class="transition-all hover:-translate-y-2">
+            <Icon name="lucide:instagram" class="text-breaker-bay" size={24} />
+          </span>
+        </div>
+      </div><!-- /.mt-1 -->
+    </div><!-- /.container -->
+  </section>
+  <section class="mt-16">
+    <div
+      class="container md:max-lg:max-w-full space-y-4 md:space-y-0 border-t border-background  grid bg-opacity-40 py-8 text-white md:grid-cols-2">
+      <ul class="flex justify-center space-x-8 p-0 text-sm md:justify-start">
+        <li>
+          <a href="#" class="hover:underline">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline">Terms of Service</a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline">FAQ</a>
+        </li>
+      </ul><!-- /.flex -->
+      <div class="relative inline">
+        <p class="text-center text-sm md:text-right">
+          Copyright &copy; {year + " " + site.title}. All Rights Reserved
+        </p><!-- /.text-center md:text-right -->
+      </div><!-- /.relative -->
+    </div><!-- /.container -->
+  </section>
+</footer><!-- /.bg-background-two pt- -->

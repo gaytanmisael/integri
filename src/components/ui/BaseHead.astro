@@ -1,0 +1,61 @@
+---
+import Roboto from "@fontsource-variable/roboto-condensed/files/roboto-condensed-latin-wght-normal.woff2"
+import Archivo from "@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2"
+
+import "@fontsource-variable/roboto-condensed"
+import "@fontsource-variable/archivo"
+
+import SEO from "@components/ui/SEO.astro"
+
+import site from "@data/Site"
+
+import "@styles/global.scss"
+import "animate.css"
+
+// TODO: Add PostHog and Favicon Components
+
+export interface Props {
+  title?: string
+  description?: string
+  image?: {
+    src: string
+    alt: string
+  }
+  canonicalURL?: URL | null
+  pageType?: "website" | "article"
+}
+
+const twitterHandle = ""
+
+const {
+  description = site.description,
+  image = site.image,
+  canonicalURL = new URL(Astro.request.url, Astro.site),
+  pageType = "website"
+} = Astro.props as Props
+
+const title = [Astro.props.title, site.title].filter(Boolean).join(" | ")
+const resolvedImage = {
+  src: new URL(image.src, Astro.site).toString(),
+  alt: image.alt
+}
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="preload" href={Roboto} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={Archivo} as="font" type="font/woff2" crossorigin />
+
+<SEO
+  name={site.title}
+  {title}
+  {description}
+  image={resolvedImage}
+  twitter={{ handle: twitterHandle }}
+  og={{ type: pageType }}
+  {canonicalURL}
+/>
+
+<link rel="sitemap" href="/sitemap-index.xml" />

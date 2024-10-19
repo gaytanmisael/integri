@@ -1,16 +1,328 @@
 ---
+import { getImage, Image, Picture } from "astro:assets"
+import { Icon } from "astro-icon/components"
 
+import Base from "@layouts/Base.astro"
+
+import Button from "@components/ui/Button.astro"
+
+import heroImage from "@assets/bg.jpg"
+import aboutImage from "@assets/about.jpg"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <section class="relative">
+    <div class="relative">
+      <div
+        class="relative table w-full overflow-hidden py-16 lg:py-12 xl:py-16">
+        <div class="absolute left-0 top-0 h-full w-full">
+          <Picture
+            src={heroImage}
+            alt="Integri HR Hero Image"
+            class="h-full w-full object-cover"
+            loading="eager"
+            formats={["avif", "webp", heroImage.format]}
+          />
+        </div><!-- /.absolute h-full w-full top-0 left-0 -->
+        <div class="bg-shark absolute inset-0 bg-opacity-70">
+        </div><!-- /.absolute inset-0 bg-shark bg-opacity-70 -->
+        <div
+          class="container relative flex min-h-[550px] flex-wrap items-center lg:container md:max-lg:max-w-full">
+          <div class="w-full text-white">
+            <h1 class="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl">
+              Transforming Organization & Empowering People
+            </h1>
+            <p class="mt-6 max-w-xl text-xl font-light leading-relaxed">
+              Integrated HR Partners: Your trusted ally simplifying human
+              resources, optimizing your workforce, and unlocking the true
+              potential of your business.
+            </p>
+            <div class="mt-6 flex items-center gap-6">
+              <Button asChild variant="secondary" href="/customer-service">
+                Talk to an HR expert now
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                href="/customer-service"
+                class="gap-2">
+                Learn more
+                <Icon name="lucide:move-right" size={16} />
+              </Button>
+            </div><!-- /.mt-6 flex items-center gap-6 -->
+          </div><!-- /.max-w-3xl -->
+        </div><!-- /.container relative -->
+      </div><!-- /.relative table w-full overflow-hidden -->
+    </div><!-- /.relative -->
+  </section>
+
+  <section class="bg-transparent">
+    <div class="container lg:container md:max-lg:max-w-full">
+      <div class="bg-breaker-bay relative -mt-20 w-full rounded-md">
+        <div class="relative grid items-center md:grid-cols-3">
+          <div class="relative">
+            <div class="space-y-5 p-8 py-16">
+              <div class="relative text-white">
+                <Icon name="lucide:users" size={48} />
+                <h4 class="text-xl font-bold">Dedicated Consultants</h4>
+                <p class="mt-1.5 leading-6">
+                  Expert HR consultants providing personalized guidance and
+                  top-notch expertise for all your human resources needs.
+                </p>
+              </div><!-- /.relative -->
+              <div class="relative">
+                <Button
+                  asChild
+                  href="#"
+                  variant="link"
+                  class="gap-2 pl-0 text-base text-white hover:text-white">
+                  Learn more
+                  <Icon name="lucide:move-right" size={16} />
+                </Button>
+              </div><!-- /.relative -->
+            </div><!-- /.p-8 -->
+          </div>
+          <div class="relative">
+            <div
+              class="space-y-5 p-8 py-16 shadow-[inset_0px_0px_24px_0px_rgba(0,0,0,.12)]">
+              <div class="relative text-white">
+                <Icon name="lucide:earth" size={48} />
+                <h4 class="text-xl font-bold">Database & Network</h4>
+                <p class="mt-1.5 leading-6">
+                  Leverage our extensive database and professional network for
+                  accessing the best HR resources and opportunities.
+                </p>
+              </div><!-- /.relative -->
+              <div class="relative">
+                <Button
+                  asChild
+                  href="#"
+                  variant="link"
+                  class="gap-2 pl-0 text-base text-white hover:text-white">
+                  Learn more
+                  <Icon name="lucide:move-right" size={16} />
+                </Button>
+              </div><!-- /.relative -->
+            </div><!-- /.p-8 -->
+          </div>
+          <div class="relative">
+            <div class="space-y-5 p-8 py-16">
+              <div class="relative text-white">
+                <Icon name="lucide:heart-handshake" size={48} />
+                <h4 class="text-xl font-bold">Quality Care For Candidates</h4>
+                <p class="mt-1.5 leading-6">
+                  We prioritize candidate care, delivering a supportive and
+                  personalized hiring experience.
+                </p>
+              </div><!-- /.relative -->
+              <div class="relative">
+                <Button
+                  asChild
+                  href="#"
+                  variant="link"
+                  class="gap-2 pl-0 text-base text-white hover:text-white">
+                  Learn more
+                  <Icon name="lucide:move-right" size={16} />
+                </Button>
+              </div><!-- /.relative -->
+            </div><!-- /.p-8 -->
+          </div>
+        </div><!-- /.relative grid md:grid-cols-3 items-center -->
+      </div><!-- /.relative -->
+    </div><!-- /.container -->
+  </section><!-- / -->
+
+  <section class="mt-16 md:mt-24 lg:mt-32">
+    <div class="container lg:container md:max-lg:max-w-full">
+      <div class="grid gap-x-8 gap-y-4 md:grid-cols-12">
+        <div class="flex h-full items-center md:col-span-3 lg:justify-center">
+          <h6
+            class="text-breaker-bay invisible text-base font-medium tracking-wide"
+            data-animation="fadeIn">
+            .Who We Are
+          </h6>
+        </div>
+        <div class="md:col-span-9">
+          <div class="grid items-center">
+            <h2
+              class="invisible text-5xl font-bold capitalize leading-none"
+              data-animation="fadeInDown">
+              Empowering businesses and employees for continuous improvement.
+            </h2>
+            <p
+              class="invisible mt-5 text-xl font-light leading-9"
+              data-animation="fadeInDown">
+              As an HR consultant, we empower businesses with tailored guidance,
+              optimizing operations for sustainable growth. We enhance employee
+              skills, engagement, and culture through training and performance
+              strategies. Our assessments identify improvements, implementing
+              effective policies and fostering open communication. By empowering
+              both, we drive positive change and long-term success.
+            </p>
+            <div class="mt-5">
+              <Button
+                asChild
+                href="#"
+                class="invisible"
+                size="lg"
+                data-animation="fadeInDown">
+                Hear From More Clients
+              </Button>
+            </div><!-- /.mt-5 -->
+          </div><!-- /.flex items-ce -->
+        </div>
+      </div><!-- /.grid -->
+    </div><!-- /.container -->
+  </section><!-- /.mt-12 md:pt-16 -->
+
+  <section class="mt-16 md:mt-24 lg:mt-32">
+    <div class="container md:max-lg:max-w-full">
+      <div class="grid items-center gap-x-8 gap-y-8 md:grid-cols-2">
+        <div class="relative lg:mx-16">
+          <div
+            class="absolute left-0 top-0 -z-10 h-full w-full overflow-hidden rounded-xl">
+            <Picture
+              src={aboutImage}
+              alt=""
+              class="h-full w-full object-cover"
+              formats={["avif", "webp", aboutImage.format]}
+            />
+          </div><!-- /.absolute top-0 left-0 h-full w-full -->
+          <div class="mb-0 block h-64"></div><!-- /.mb-0 block -->
+          <div
+            class="bg-catskill-white z-10 m-0 rounded-xl p-8 shadow-md lg:-ml-[10%] lg:mb-[10%] lg:mr-[60%] lg:mt-0">
+            <h4 class="text-lg font-bold leading-snug">Our Mission</h4>
+            <p class="mt-5 leading-6">
+              Empowering organizations through strategic HR solutions and
+              fostering a culture of growth, engagement, and success.
+            </p><!-- /.mt- -->
+          </div><!-- /.m-0 rounded-xl -->
+        </div><!-- /.relative -->
+
+        <div class="relative">
+          <div class="grid content-center gap-y-5">
+            <p
+              class="text-breaker-bay invisible text-base font-medium tracking-wide"
+              data-animation="fadeInDown">
+              .About Us
+            </p>
+            <h2
+              class="invisible text-5xl font-bold capitalize leading-none"
+              data-animation="fadeInDown">
+              We value the strength of human connections.
+            </h2>
+            <p class="invisible leading-6" data-animation="fadeInDown">
+              We recognize the immense value of human connections in fostering
+              collaboration, engagement, and a positive work environment,
+              driving organizational success.
+            </p><!-- / -->
+            <div class="invisible relative" data-animation="fadeInDown">
+              <div class="group grid grid-cols-12 items-center gap-4">
+                <div class="col-span-12 md:col-span-1">
+                  <div
+                    class="bg-breaker-bay rounded-full p-2 text-white transition-all group-hover:-translate-y-2">
+                    <Icon name="lucide:heart" size={28} />
+                  </div><!-- /.rounded- -->
+                </div><!-- /.w-full -->
+                <div class="col-span-12 md:col-span-10">
+                  <h3 class="text-xl font-bold leading-none">Our Values</h3>
+                  <p class="mt-2">
+                    <b>Excellence</b>, <b>Integrity</b>, and <b>Collaboration</b
+                    >: Our core values that drive exceptional HR solutions and
+                    lasting partnerships.
+                  </p>
+                </div><!-- /.w-full -->
+              </div><!-- /.flex flex-col items-center gap-4 -->
+            </div><!-- /.relative -->
+            <div class="invisibl relative" data-animation="fadeInDown">
+              <div class="group grid grid-cols-12 items-center gap-4">
+                <div class="col-span-12 md:col-span-1">
+                  <div
+                    class="bg-breaker-bay rounded-full p-2 text-white transition-all group-hover:-translate-y-2">
+                    <Icon name="lucide:heart" size={28} />
+                  </div><!-- /.rounded- -->
+                </div><!-- /.w-full -->
+                <div class="col-span-12 md:col-span-10">
+                  <h3 class="text-xl font-bold leading-none">Our Values</h3>
+                  <p class="mt-2">
+                    <b>Excellence</b>, <b>Integrity</b>, and <b>Collaboration</b
+                    >: Our core values that drive exceptional HR solutions and
+                    lasting partnerships.
+                  </p>
+                </div><!-- /.w-full -->
+              </div><!-- /.flex flex-col items-center gap-4 -->
+            </div><!-- /.relative -->
+            <div class="mt-4">
+              <Button asChild href="#">Learn More</Button>
+            </div>
+          </div><!-- /.grid -->
+        </div><!-- /.relative -->
+      </div><!-- /.grid md:grid-cols-2 gap-x-8 gap-y-4 -->
+    </div><!-- /.container md:max-lg:max-w- -->
+  </section><!-- /.mt-12 md:mt-16 -->
+
+  <section class="mt-16 md:mt-24 lg:mt-32">
+    <div class="container md:max-lg:max-w-full">
+      <div class="grid grid-cols-12 items-center gap-16">
+        <div class="col-span-12 md:col-span-4">
+          <div class="grid content-center gap-y-5">
+            <p
+              class="text-breaker-bay invisible text-base font-medium tracking-wide"
+              data-animation="fadeInDown">
+              .Our Process
+            </p><!-- / -->
+            <h2
+              class="invisible text-5xl font-bold capitalize leading-none"
+              data-animation="fadeInDown">
+              To Help People Everywhere Find A Job And Company They Love
+            </h2><!-- / -->
+            <div class="relative mt-4">
+              <Button asChild href="#">Learn More</Button>
+            </div><!-- /.relative -->
+          </div><!-- /.grid content-center gap-y-5 -->
+        </div>
+        <div class="col-span-12 md:col-span-8">
+          <div class="grid gap-y-5">
+            <div class="grid gap-4">
+              <h5 class="invisible font-bold" data-animation="fadeInDown">
+                1. Needs Assessment
+              </h5>
+              <p class="invisible" data-animation="fadeInDown">
+                This initial step involves thoroughly understanding the
+                organization's HR requirements and challenges. HR consultants
+                gather information through data analysis, interviews, and
+                discussions with key stakeholders. By identifying areas of
+                improvement and aligning HR needs with the organization's goals,
+                the consultant gains insights to develop effective strategies.
+              </p>
+            </div>
+            <div class="grid gap-4">
+              <h5 class="invisible font-bold" data-animation="fadeInDown">
+                2. Strategy Development and Implementation
+              </h5>
+              <p class="invisible" data-animation="fadeInDown">
+                This may involve talent acquisition, employee development,
+                performance management, compensation and benefits, and other HR
+                areas. The strategy is designed to align with the organization's
+                objectives and optimize HR practices. Once the strategy is
+                developed, the consultant works closely with the organization to
+                implement the necessary policies, programs, and processes.
+              </p>
+            </div>
+            <div class="grid gap-4">
+              <h5 class="invisible font-bold" data-animation="fadeInDown">
+                3. Evaluation and Continuous Support
+              </h5>
+              <p class="invisible" data-animation="fadeInDown">
+                Based on the findings, adjustments are made to optimize results.
+                The consultant also provides ongoing support, guidance, and
+                expertise to the HR team and management, addressing concerns,
+                offering solutions, and staying up-to-date with industry trends.
+              </p>
+            </div>
+          </div><!-- /.grid gap-y-5 -->
+        </div>
+      </div><!-- /.grid items-center gap-x-8 gap-y-8 md:grid-cols-2 -->
+    </div><!-- /.container md:max-lg:max-w-full -->
+  </section><!-- /.mt-16 md:mt-24 lg:mt- -->
+</Base>

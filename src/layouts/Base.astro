@@ -1,0 +1,27 @@
+---
+import BaseHead, {
+  type Props as BaseHeadProps
+} from "@components/ui/BaseHead.astro"
+
+import site from "@data/Site"
+
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+
+export type Props = BaseHeadProps
+const { ...head } = Astro.props as Props
+---
+
+<!doctype html>
+<html lang={site.languageCode} class="scroll-smooth">
+  <head>
+    <BaseHead {...head} />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+
+    <script src="../scripts/animation.ts"></script>
+  </body>
+</html>
