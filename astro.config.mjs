@@ -15,8 +15,8 @@ export default defineConfig({
     alpinejs(),
     sitemap(),
     tailwind({ applyBaseStyles: false }),
-    icon(),
-    db()
+    icon()
+    // db()
   ],
   output: "hybrid",
   adapter: netlify()
