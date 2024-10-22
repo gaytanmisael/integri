@@ -24,7 +24,7 @@ import aboutImage from "@assets/about.jpg"
             formats={["avif", "webp", heroImage.format]}
           />
         </div><!-- /.absolute h-full w-full top-0 left-0 -->
-        <div class="bg-shark absolute inset-0 bg-opacity-70">
+        <div class="absolute inset-0 bg-shark bg-opacity-70">
         </div><!-- /.absolute inset-0 bg-shark bg-opacity-70 -->
         <div
           class="container relative flex min-h-[550px] flex-wrap items-center lg:container md:max-lg:max-w-full">
@@ -37,7 +37,7 @@ import aboutImage from "@assets/about.jpg"
               resources, optimizing your workforce, and unlocking the true
               potential of your business.
             </p>
-            <div class="mt-6 flex items-center gap-6">
+            <div class="mt-6 flex flex-col items-center gap-6 md:flex-row">
               <Button asChild variant="secondary" href="/customer-service">
                 Talk to an HR expert now
               </Button>
@@ -58,7 +58,7 @@ import aboutImage from "@assets/about.jpg"
 
   <section class="bg-transparent">
     <div class="container lg:container md:max-lg:max-w-full">
-      <div class="bg-breaker-bay relative -mt-20 w-full rounded-md">
+      <div class="relative -mt-20 w-full rounded-md bg-breaker-bay">
         <div class="relative grid items-center md:grid-cols-3">
           <div class="relative">
             <div class="space-y-5 p-8 py-16">
@@ -137,7 +137,7 @@ import aboutImage from "@assets/about.jpg"
       <div class="grid gap-x-8 gap-y-4 md:grid-cols-12">
         <div class="flex h-full items-center md:col-span-3 lg:justify-center">
           <h6
-            class="text-breaker-bay text-base font-medium tracking-wide"
+            class="text-base font-medium tracking-wide text-breaker-bay"
             data-animation="fadeIn">
             .Who We Are
           </h6>
@@ -190,7 +190,7 @@ import aboutImage from "@assets/about.jpg"
           </div><!-- /.absolute top-0 left-0 h-full w-full -->
           <div class="mb-0 block h-64"></div><!-- /.mb-0 block -->
           <div
-            class="bg-catskill-white z-10 m-0 rounded-xl p-8 shadow-md lg:-ml-[10%] lg:mb-[10%] lg:mr-[60%] lg:mt-0">
+            class="z-10 m-0 rounded-xl bg-catskill-white p-8 shadow-md lg:-ml-[10%] lg:mb-[10%] lg:mr-[60%] lg:mt-0">
             <h4 class="text-lg font-bold leading-snug">Our Mission</h4>
             <p class="mt-5 leading-6">
               Empowering organizations through strategic HR solutions and
@@ -202,7 +202,7 @@ import aboutImage from "@assets/about.jpg"
         <div class="relative">
           <div class="grid content-center gap-y-5">
             <p
-              class="text-breaker-bay text-base font-medium tracking-wide"
+              class="text-base font-medium tracking-wide text-breaker-bay"
               data-animation="fadeInDown">
               .About Us
             </p>
@@ -218,9 +218,9 @@ import aboutImage from "@assets/about.jpg"
             </p><!-- / -->
             <div class="relative" data-animation="fadeInDown">
               <div class="group grid grid-cols-12 items-center gap-4">
-                <div class="col-span-12 md:col-span-1">
+                <div class="col-span-2 md:col-span-1">
                   <div
-                    class="bg-breaker-bay rounded-full p-2 text-white transition-all group-hover:-translate-y-2">
+                    class="rounded-full bg-breaker-bay p-2 text-white transition-all group-hover:-translate-y-2">
                     <Icon name="lucide:heart" size={28} />
                   </div><!-- /.rounded- -->
                 </div><!-- /.w-full -->
@@ -236,9 +236,9 @@ import aboutImage from "@assets/about.jpg"
             </div><!-- /.relative -->
             <div class="invisibl relative" data-animation="fadeInDown">
               <div class="group grid grid-cols-12 items-center gap-4">
-                <div class="col-span-12 md:col-span-1">
+                <div class="col-span-2 md:col-span-1">
                   <div
-                    class="bg-breaker-bay rounded-full p-2 text-white transition-all group-hover:-translate-y-2">
+                    class="rounded-full bg-breaker-bay p-2 text-white transition-all group-hover:-translate-y-2">
                     <Icon name="lucide:heart" size={28} />
                   </div><!-- /.rounded- -->
                 </div><!-- /.w-full -->
@@ -263,17 +263,15 @@ import aboutImage from "@assets/about.jpg"
 
   <section class="mt-16 md:mt-24 lg:mt-32">
     <div class="container md:max-lg:max-w-full">
-      <div class="grid grid-cols-12 items-center gap-16">
-        <div class="col-span-12 md:col-span-4">
-          <div class="grid content-center gap-y-5">
+      <div class="grid w-full grid-cols-12 items-center gap-8 lg:gap-16">
+        <div class="relaitve col-span-12 w-full md:col-span-4">
+          <div class="grid gap-y-5">
             <p
-              class="text-breaker-bay text-base font-medium tracking-wide"
+              class="text-base font-medium tracking-wide text-breaker-bay"
               data-animation="fadeInDown">
               .Our Process
             </p><!-- / -->
-            <h2
-              class="text-5xl font-bold capitalize leading-none"
-              data-animation="fadeInDown">
+            <h2 class="text-5xl font-bold capitalize leading-none">
               To Help People Everywhere Find A Job And Company They Love
             </h2><!-- / -->
             <div class="relative mt-4">
