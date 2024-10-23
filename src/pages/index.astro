@@ -1,5 +1,5 @@
 ---
-import { getImage, Image, Picture } from "astro:assets"
+import { Picture } from "astro:assets"
 import { Icon } from "astro-icon/components"
 
 import Base from "@layouts/Base.astro"
@@ -8,6 +8,7 @@ import Button from "@components/ui/Button.astro"
 
 import heroImage from "@assets/bg.jpg"
 import aboutImage from "@assets/about.jpg"
+import whyImage from "@assets/why.jpg"
 ---
 
 <Base>
@@ -263,8 +264,8 @@ import aboutImage from "@assets/about.jpg"
 
   <section class="mt-16 md:mt-24 lg:mt-32">
     <div class="container md:max-lg:max-w-full">
-      <div class="grid w-full grid-cols-12 items-center gap-8 lg:gap-16">
-        <div class="relaitve col-span-12 w-full md:col-span-4">
+      <div class="grid grid-cols-12 items-center gap-8 lg:gap-16">
+        <div class="col-span-12 w-full md:col-span-4">
           <div class="grid gap-y-5">
             <p
               class="text-base font-medium tracking-wide text-breaker-bay"
@@ -322,5 +323,187 @@ import aboutImage from "@assets/about.jpg"
         </div>
       </div><!-- /.grid items-center gap-x-8 gap-y-8 md:grid-cols-2 -->
     </div><!-- /.container md:max-lg:max-w-full -->
+  </section><!-- /.mt-16 md:mt-24 lg:mt- -->
+
+  <section class="mt-16 md:mt-24 lg:mt-32">
+    <div class="container md:max-lg:max-w-full">
+      <div class="grid content-center gap-y-8">
+        <div class="relative mx-auto max-w-6xl text-left md:text-center">
+          <p
+            class="text-base font-medium capitalize tracking-wide text-breaker-bay">
+            .our services
+          </p><!-- / -->
+          <h2 class="text-5xl font-bold capitalize leading-none">
+            Optimize Your Business with the right talent, Right skill & Right
+            Tools
+          </h2><!-- / -->
+        </div><!-- /.relative mx-auto max-w-6xl text-left md:text-center -->
+
+        <div class="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
+          <div class="group relative">
+            <div class="grid gap-y-5">
+              <div
+                class="text-breaker-bay duration-300 group-hover:-translate-y-4">
+                <Icon name="lucide:globe" size={48} />
+              </div>
+              <h5 class="font-bold leading-6">01. HR Outsourcing</h5>
+              <p>
+                Streamline HR outsourcing with Integrated HR Partners, offering
+                tailored solutions for efficient and expert handling of your HR
+                needs.
+              </p>
+              <div class="relative">
+                <Button asChild href="#" size="icon">
+                  <Icon name="lucide:arrow-right" size={24} />
+                </Button>
+              </div><!-- /.relative -->
+            </div><!-- /.grid gap-y-5 -->
+          </div><!-- /.relative -->
+          <div class="group relative">
+            <div class="grid gap-y-5">
+              <div
+                class="text-breaker-bay duration-300 group-hover:-translate-y-4">
+                <Icon name="lucide:message-square-more" size={48} />
+              </div>
+              <h5 class="font-bold leading-6">02. HR Consulting</h5>
+              <p>
+                Streamline HR outsourcing with Integrated HR Partners, offering
+                tailored solutions for efficient and expert handling of your HR
+                needs.
+              </p>
+              <div class="relative">
+                <Button asChild href="#" size="icon">
+                  <Icon name="lucide:arrow-right" size={24} />
+                </Button>
+              </div><!-- /.relative -->
+            </div><!-- /.grid gap-y-5 -->
+          </div><!-- /.relative -->
+          <div class="group relative">
+            <div class="grid gap-y-5">
+              <div
+                class="text-breaker-bay duration-300 group-hover:-translate-y-4">
+                <Icon name="lucide:calculator" size={48} />
+              </div>
+              <h5 class="font-bold leading-6">03. Payroll</h5>
+              <p>
+                Streamline HR outsourcing with Integrated HR Partners, offering
+                tailored solutions for efficient and expert handling of your HR
+                needs.
+              </p>
+              <div class="relative">
+                <Button asChild href="#" size="icon">
+                  <Icon name="lucide:arrow-right" size={24} />
+                </Button>
+              </div><!-- /.relative -->
+            </div><!-- /.grid gap-y-5 -->
+          </div><!-- /.relative -->
+          <div class="group relative">
+            <div class="grid gap-y-5">
+              <div
+                class="text-breaker-bay duration-300 group-hover:-translate-y-4">
+                <Icon name="lucide:handshake" size={48} />
+              </div>
+              <h5 class="font-bold leading-6">04. Recruitment</h5>
+              <p>
+                Streamline HR outsourcing with Integrated HR Partners, offering
+                tailored solutions for efficient and expert handling of your HR
+                needs.
+              </p>
+              <div class="relative">
+                <Button asChild href="#" size="icon">
+                  <Icon name="lucide:arrow-right" size={24} />
+                </Button>
+              </div><!-- /.relative -->
+            </div><!-- /.grid gap-y-5 -->
+          </div><!-- /.relative -->
+        </div><!-- /.grid md:grid-cols-2 lg:grid-cols-4 -->
+      </div><!-- /.grid content-center gap-y-5 -->
+    </div><!-- /.container md:max-lg:max-w-full -->
+  </section><!-- /.mt-16 md:mt-24 lg:mt-32 -->
+
+  <section class="my-16 md:my-24 lg:my-32">
+    <div class="container md:max-lg:max-w-full">
+      <div class="grid items-center gap-16 md:grid-cols-5">
+        <div class="md:col-span-2">
+          <div class="grid content-center items-center gap-5">
+            <div class="relative w-full">
+              <div class="md:-ml-28">
+                <Picture
+                  src={whyImage}
+                  alt=""
+                  class="rounded-xl"
+                  formats={["avif", "webp"]}
+                />
+              </div><!-- /.md:-ml-28 md:mb- -->
+            </div><!-- /.relative -->
+            <div class="relative">
+              <div class="grid grid-cols-3 gap-5">
+                <div class="flex flex-col justify-center gap-3 text-center">
+                  <h3 class="text-4xl font-bold">83k</h3>
+                  <p class="">Talent Placed</p><!-- / -->
+                </div><!-- /.flex flex-col justify-center text-center -->
+                <div class="flex flex-col justify-center gap-3 text-center">
+                  <h3 class="text-4xl font-bold">100K</h3>
+                  <p class="">Job Seeker</p><!-- / -->
+                </div><!-- /.flex flex-col justify-center text-center -->
+                <div class="flex flex-col justify-center gap-3 text-center">
+                  <h3 class="text-4xl font-bold">128K</h3>
+                  <p class="">Resume Global</p><!-- / -->
+                </div><!-- /.flex flex-col justify-center text-center -->
+              </div><!-- /.grid grid-cols-3 -->
+            </div><!-- /.relative -->
+          </div><!-- /.grid items-center content-center -->
+        </div><!-- /.md:col-span-2 -->
+        <div class="md:col-span-3">
+          <div class="grid gap-y-5">
+            <p
+              class="text-base font-medium capitalize tracking-wide text-breaker-bay">
+              .why choose us
+            </p><!-- / -->
+            <h2 class="text-5xl font-bold capitalize leading-none">
+              Unleash exceptional value with our promise of high-quality
+              services.
+            </h2>
+            <p class="leading-relaxed">
+              We deliver high-quality services of exceptional value by
+              leveraging our expertise, personalized approach, and commitment to
+              continuous improvement. Our focus on understanding client needs
+              and building long-term partnerships ensures we consistently exceed
+              expectations.
+            </p><!-- / -->
+            <div class="grid grid-cols-2 gap-5">
+              <div>
+                <h5 class="font-bold">01. Expertise</h5>
+                <p class="mb-2">
+                  Leverage our HR expertise and industry knowledge to deliver
+                  high-quality services.
+                </p>
+              </div>
+              <div>
+                <h5 class="font-bold">02. Personalized Approach</h5>
+                <p class="mb-2">
+                  Tailor our solutions to meet your specific needs and
+                  objectives.
+                </p>
+              </div>
+              <div>
+                <h5 class="font-bold">03. Continuous Improvement</h5>
+                <p class="mb-2">
+                  Strive for excellence through ongoing refinement and staying
+                  up-to-date with industry advancements.
+                </p>
+              </div>
+              <div>
+                <h5 class="font-bold">04. Long-Term Partnerships</h5>
+                <p class="mb-2">
+                  Build lasting relationships by exceeding expectations and
+                  providing ongoing support for your success.
+                </p>
+              </div>
+            </div><!-- /.grid grid-cols-2 -->
+          </div><!-- /.grid gap-y- -->
+        </div><!-- /.md:col-span-2 -->
+      </div><!-- /.grid md:grid-cols-5 -->
+    </div><!-- /.container md:max-lg:max-w- -->
   </section><!-- /.mt-16 md:mt-24 lg:mt- -->
 </Base>
