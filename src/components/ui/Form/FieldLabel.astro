@@ -1,0 +1,13 @@
+---
+export type Props = astroHTML.JSX.HTMLAttributes & {
+  required?: boolean
+}
+
+const { required, ...props } = Astro.props as Props
+---
+
+<div {...props} data-required={required}>
+  <slot />
+  <span class="required text-red-500 group-data-[required]:after:content-['*']">
+  </span>
+</div>

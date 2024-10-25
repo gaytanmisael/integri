@@ -1,0 +1,374 @@
+---
+import { Picture } from "astro:assets"
+import { Icon } from "astro-icon/components"
+
+import Base from "@layouts/Base.astro"
+
+import Button from "@components/ui/Button.astro"
+
+import aboutImage from "@assets/about.jpg"
+import about1 from "@assets/about-1.jpg"
+import about2 from "@assets/about-2.jpg"
+import about3 from "@assets/about-3.jpg"
+
+import team1 from "@assets/team-1.jpg"
+import team2 from "@assets/team-2.jpg"
+import team3 from "@assets/team-3.jpg"
+
+import "tiny-slider/dist/tiny-slider.css"
+---
+
+<Base>
+  <section class="relative bg-catskill-white py-12 md:py-16 lg:py-32">
+    <div class="container md:max-lg:max-w-full">
+      <div class="w-full text-center">
+        <h1 class="text-5xl font-bold">About Us</h1>
+        <p class="mt-4">Empowering Organizations and Elevating HR Practices</p>
+      </div><!-- /.text-center -->
+    </div><!-- /.container -->
+  </section><!-- /.relative -->
+
+  <section class="mt-16 md:mt-24 lg:mt-32">
+    <div class="container md:max-lg:max-w-full">
+      <div class="grid items-center gap-16 lg:grid-cols-3">
+        <div class="lg:col-span-2">
+          <div class="flex flex-wrap gap-5">
+            <p class="w-full capitalize text-breaker-bay">.who we are</p>
+            <h2 class="w-full font-bold capitalize md:text-5xl md:leading-none">
+              Empowering businesses and employees for continuous improvement.
+            </h2>
+            <p class="gap-8 leading-relaxed lg:columns-2">
+              As a trusted HR consultant, Integrated HR Partners empowers
+              businesses by providing strategic guidance tailored to their
+              unique needs, ultimately optimizing operations for sustainable
+              growth. We foster an environment of continuous improvement by
+              enhancing employee skills, engagement, and culture through
+              targeted training programs and effective performance strategies.
+              Our comprehensive assessments identify areas for improvement,
+              allowing us to implement impactful policies and promote open
+              communication channels. By empowering both businesses and
+              employees, we drive positive change, unlocking their full
+              potential and paving the way for long-term success.
+            </p><!-- /.lg:columns-2 gap-8 -->
+          </div><!-- /.grid md:col-span-2 -->
+        </div><!-- / -->
+        <div class="relative hidden lg:inline-grid">
+          <div class="grid gap-5">
+            <div class="flex flex-col justify-center gap-3 text-center">
+              <h3 class="text-4xl font-bold">83k</h3>
+              <p class="">Talent Placed</p><!-- / -->
+            </div><!-- /.flex flex-col justify-center text-center -->
+            <div class="flex flex-col justify-center gap-3 text-center">
+              <h3 class="text-4xl font-bold">100K</h3>
+              <p class="">Job Seeker</p><!-- / -->
+            </div><!-- /.flex flex-col justify-center text-center -->
+            <div class="flex flex-col justify-center gap-3 text-center">
+              <h3 class="text-4xl font-bold">128K</h3>
+              <p class="">Resume Global</p><!-- / -->
+            </div><!-- /.flex flex-col justify-center text-center -->
+          </div><!-- /.text-center -->
+        </div><!-- / -->
+      </div><!-- /.grid md:grid-cols-3 items-cetner -->
+    </div><!-- /.container md:max-lg:max-w-full -->
+  </section><!-- /.mt-16 md:mt-24 lg:mt-32 -->
+
+  <section class="mt-8">
+    <div class="container">
+      <div class="grid gap-16 md:grid-cols-3">
+        <div class="relative size-full drop-shadow-md">
+          <Picture
+            src={about1}
+            alt=""
+            formats={["avif", "webp"]}
+            class="min-h-52 rounded-3xl object-cover lg:min-h-[400px]"
+          />
+        </div><!-- /.w-full h-full shadow-md -->
+        <div class="relative size-full drop-shadow-md">
+          <Picture
+            src={about2}
+            alt=""
+            formats={["avif", "webp"]}
+            class="min-h-52 rounded-3xl object-cover lg:min-h-[400px]"
+          />
+        </div><!-- /.w-full h-full shadow-md -->
+        <div class="relative size-full drop-shadow-md">
+          <Picture
+            src={about3}
+            alt=""
+            formats={["avif", "webp"]}
+            class="min-h-52 rounded-3xl object-cover lg:min-h-[400px]"
+          />
+        </div><!-- /.w-full h-full shadow-md -->
+      </div><!-- /.grid md:grid-cols-3 -->
+    </div><!-- /.container -->
+  </section><!-- /.mt-8 -->
+
+  <section class="mt-16 md:mt-24 lg:mt-32">
+    <div class="container">
+      <div class="logo-cloud-slider">
+        <div>
+          <h2 class="text-4xl font-bold md:text-5xl">Company</h2>
+        </div>
+        <div>
+          <h2 class="text-4xl font-bold md:text-5xl">Company</h2>
+        </div>
+        <div>
+          <h2 class="text-4xl font-bold md:text-5xl">Company</h2>
+        </div>
+        <div>
+          <h2 class="text-4xl font-bold md:text-5xl">Company</h2>
+        </div>
+        <div>
+          <h2 class="text-4xl font-bold md:text-5xl">Company</h2>
+        </div>
+        <div>
+          <h2 class="text-4xl font-bold md:text-5xl">Company</h2>
+        </div>
+        <div>
+          <h2 class="text-4xl font-bold md:text-5xl">Company</h2>
+        </div>
+        <div>
+          <h2 class="text-4xl font-bold md:text-5xl">Company</h2>
+        </div>
+        <div>
+          <h2 class="text-4xl font-bold md:text-5xl">Company</h2>
+        </div>
+      </div><!-- /.logo-cloud-sl -->
+    </div><!-- /.container -->
+  </section><!-- /.mt-16 md:mt-24 lg:mt-32 -->
+
+  <section class="mt-16 md:mt-24 lg:mt-32">
+    <div class="container md:max-lg:max-w-full">
+      <div class="grid items-center gap-x-8 gap-y-8 lg:grid-cols-2">
+        <div class="relative lg:mx-16">
+          <div
+            class="absolute left-0 top-0 -z-10 h-full w-full overflow-hidden rounded-xl">
+            <Picture
+              src={aboutImage}
+              alt=""
+              class="h-full w-full object-cover"
+              formats={["avif", "webp", aboutImage.format]}
+            />
+          </div><!-- /.absolute top-0 left-0 h-full w-full -->
+          <div class="mb-0 block h-64"></div><!-- /.mb-0 block -->
+          <div
+            class="z-10 m-0 rounded-xl bg-catskill-white p-8 shadow-md lg:-ml-[10%] lg:mb-[10%] lg:mr-[60%] lg:mt-0">
+            <h4 class="text-lg font-bold leading-snug">Our Mission</h4>
+            <p class="mt-5 leading-6">
+              Empowering organizations through strategic HR solutions and
+              fostering a culture of growth, engagement, and success.
+            </p><!-- /.mt- -->
+          </div><!-- /.m-0 rounded-xl -->
+        </div><!-- /.relative -->
+
+        <div class="relative">
+          <div class="grid content-center gap-y-5">
+            <p
+              class="text-base font-medium tracking-wide text-breaker-bay"
+              data-animation="fadeInDown">
+              .About Us
+            </p>
+            <h2
+              class="text-5xl font-bold capitalize leading-none"
+              data-animation="fadeInDown">
+              We value the strength of human connections.
+            </h2>
+            <p class="leading-6" data-animation="fadeInDown">
+              We recognize the immense value of human connections in fostering
+              collaboration, engagement, and a positive work environment,
+              driving organizational success.
+            </p><!-- / -->
+            <div class="relative" data-animation="fadeInDown">
+              <div class="group grid grid-cols-12 items-center gap-4">
+                <div class="col-span-2 md:col-span-1">
+                  <div
+                    class="rounded-full bg-breaker-bay p-2 text-white transition-all group-hover:-translate-y-2">
+                    <Icon name="lucide:heart" size={28} />
+                  </div><!-- /.rounded- -->
+                </div><!-- /.w-full -->
+                <div class="col-span-12 md:col-span-10">
+                  <h3 class="text-xl font-bold leading-none">Our Values</h3>
+                  <p class="mt-2">
+                    <b>Excellence</b>, <b>Integrity</b>, and <b>Collaboration</b
+                    >: Our core values that drive exceptional HR solutions and
+                    lasting partnerships.
+                  </p>
+                </div><!-- /.w-full -->
+              </div><!-- /.flex flex-col items-center gap-4 -->
+            </div><!-- /.relative -->
+            <div class="invisibl relative" data-animation="fadeInDown">
+              <div class="group grid grid-cols-12 items-center gap-4">
+                <div class="col-span-2 md:col-span-1">
+                  <div
+                    class="rounded-full bg-breaker-bay p-2 text-white transition-all group-hover:-translate-y-2">
+                    <Icon name="lucide:heart" size={28} />
+                  </div><!-- /.rounded- -->
+                </div><!-- /.w-full -->
+                <div class="col-span-12 md:col-span-10">
+                  <h3 class="text-xl font-bold leading-none">Our Values</h3>
+                  <p class="mt-2">
+                    <b>Excellence</b>, <b>Integrity</b>, and <b>Collaboration</b
+                    >: Our core values that drive exceptional HR solutions and
+                    lasting partnerships.
+                  </p>
+                </div><!-- /.w-full -->
+              </div><!-- /.flex flex-col items-center gap-4 -->
+            </div><!-- /.relative -->
+            <div class="mt-4">
+              <Button asChild href="#">Learn More</Button>
+            </div>
+          </div><!-- /.grid -->
+        </div><!-- /.relative -->
+      </div><!-- /.grid md:grid-cols-2 gap-x-8 gap-y-4 -->
+    </div><!-- /.container md:max-lg:max-w- -->
+  </section><!-- /.mt-12 md:mt-16 -->
+
+  <section class="mt-12 bg-catskill-white py-16 md:mt-16 lg:mt-32">
+    <div class="container">
+      <div class="flex flex-wrap justify-center space-y-5">
+        <div class="text-center">
+          <div class="rounded-full bg-breaker-bay fill-white p-5 text-white">
+            <Icon name="lucide:quote" size={36} />
+          </div><!-- /.text-white -->
+        </div><!-- /.w-full -->
+
+        <div class="testimonial-slider w-full">
+          <div class="relative flex flex-col gap-y-6 font-light">
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo"
+            </p>
+            <div class="relative">
+              <h5 class="font-bold">Verstapen</h5>
+              <p>HR Cyberyield</p>
+            </div><!-- /.relative -->
+          </div><!-- /.relative -->
+          <div class="relative flex flex-col gap-y-6 font-light">
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo"
+            </p>
+            <div class="relative">
+              <h5 class="font-bold">Verstapen</h5>
+              <p>HR Cyberyield</p>
+            </div><!-- /.relative -->
+          </div><!-- /.relative -->
+          <div class="relative flex flex-col gap-y-6 font-light">
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo"
+            </p>
+            <div class="relative">
+              <h5 class="font-bold">Verstapen</h5>
+              <p>HR Cyberyield</p>
+            </div><!-- /.relative -->
+          </div><!-- /.relative -->
+          <div class="relative flex flex-col gap-y-6 font-light">
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo"
+            </p>
+            <div class="relative">
+              <h5 class="font-bold">Verstapen</h5>
+              <p>HR Cyberyield</p>
+            </div><!-- /.relative -->
+          </div><!-- /.relative -->
+          <div class="relative flex flex-col gap-y-6 font-light">
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo"
+            </p>
+            <div class="relative">
+              <h5 class="font-bold">Verstapen</h5>
+              <p>HR Cyberyield</p>
+            </div><!-- /.relative -->
+          </div><!-- /.relative -->
+        </div><!-- /.slider -->
+      </div><!-- /.flex flex-wrap space-y-5 -->
+    </div><!-- /.container -->
+  </section><!-- /.mt-12 md:mt-1 -->
+
+  <section class="my-16 md:my-24 lg:my-32">
+    <div class="container">
+      <div class="grid items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="relative grid gap-8">
+          <div class="relative size-full drop-shadow-md">
+            <Picture
+              src={team1}
+              alt=""
+              class="min-h-52 rounded-3xl object-cover lg:min-h-[400px]"
+              formats={["avif", "webp"]}
+            />
+          </div>
+          <div class="relative size-full drop-shadow-md">
+            <Picture
+              src={team3}
+              alt=""
+              class="min-h-52 rounded-3xl object-cover lg:min-h-[400px]"
+              formats={["avif", "webp"]}
+            />
+          </div>
+        </div>
+        <div class="relative drop-shadow-md">
+          <Picture
+            src={team2}
+            alt=""
+            class="min-h-52 rounded-3xl object-cover lg:min-h-[400px]"
+            formats={["avif", "webp"]}
+          />
+        </div>
+        <div class="grid space-y-5 md:col-span-2 lg:col-span-1">
+          <p
+            class="text-base font-medium capitalize tracking-wide text-breaker-bay">
+            .the team
+          </p>
+          <h2 class="text-5xl font-bold capitalize leading-none">
+            Unleashing Potential, Driving Success.
+          </h2>
+          <p>
+            Our HR experts provide tailored solutions and strategic guidance to
+            optimize your HR practices, drive success, and create a thriving
+            work environment.
+          </p>
+          <div class="relative">
+            <Button asChild href="#">Discover More</Button>
+          </div><!-- /.relative -->
+        </div>
+      </div><!-- /.grid md:grid-cols-3 gap-8 -->
+    </div><!-- /.container -->
+  </section><!-- /.mt-16 md:mt-24 lg:mt-32 -->
+
+  <script>
+    import { tns } from "tiny-slider"
+
+    const slider = tns({
+      container: ".testimonial-slider",
+      items: 2,
+      slideBy: "page",
+      autoplay: true,
+      controls: false,
+      autoplayButton: false,
+      nav: true,
+      autoplayButtonOutput: false,
+      mouseDrag: true,
+      mode: "carousel"
+    })
+
+    const logo = tns({
+      container: ".logo-cloud-slider",
+      slideBy: "page",
+      autoplay: true,
+      controls: false,
+      autoplayButtonOutput: false,
+      responsive: {
+        640: {
+          items: 2
+        },
+        1024: { items: 4 },
+        1280: {
+          items: 5
+        }
+      }
+    })
+  </script>
+</Base>

@@ -1,0 +1,41 @@
+---
+import FieldLabel from "./FieldLabel.astro"
+import FormErrorList from "./FormErrorList.astro"
+
+export type Props = astroHTML.JSX.HTMLAttributes & {
+  errors?: string[]
+  label?: boolean
+}
+
+const { errors, label = true, ...props } = Astro.props as Props
+---
+
+<div {...props} class:list={[props.class]}>
+  <div class:list={["flex", "flex-col-reverse", label ? "gap-2" : ""]}>
+    <div class="relative">
+      {
+        errors && (
+          <div class="peer pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              class="size-5 text-red-500">
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+        )
+      }
+      <slot />
+    </div><!-- /.relative -->
+    <FieldLabel>
+      <slot name="label" />
+    </FieldLabel>
+  </div><!-- /.flex flex-col-reverse gap-2 -->
+  {errors && <FormErrorList errors={errors} />}
+</div>

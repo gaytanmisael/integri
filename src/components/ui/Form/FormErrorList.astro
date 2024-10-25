@@ -1,0 +1,13 @@
+---
+import FormError from "./FormError.astro"
+
+export type Props = {
+  errors?: string[]
+}
+
+const { errors, ...props } = Astro.props as Props
+---
+
+<FormError {...props}>
+  {errors?.join(", ")}
+</FormError>
