@@ -1,5 +1,6 @@
 ---
 export const prerender = false
+import { ViewTransitions } from "astro:transitions"
 
 import { Icon } from "astro-icon/components"
 import { actions, isInputError } from "astro:actions"
@@ -14,6 +15,7 @@ const errors = isInputError(result?.error) ? result?.error.fields : {}
 ---
 
 <Base>
+  <ViewTransitions />
   <section class="relative bg-catskill-white py-12 md:py-16 lg:py-32">
     <div class="md:max-lg:max-full container">
       <div class="w-full text-center">
@@ -110,13 +112,15 @@ const errors = isInputError(result?.error) ? result?.error.fields : {}
           <form
             action={actions.contact.submit}
             method="post"
-            class="grid gap-4 md:grid-cols-2">
+            class="grid gap-4 md:grid-cols-2"
+            enctype="application/x-www-form-urlencoded">
             <Field errors={errors.firstName} label={false}>
               <input
                 type="text"
                 required
                 name="firstName"
                 autocomplete="name"
+                transition:persist
                 placeholder="First Name"
                 class="text-shadow block w-full border-0 px-3.5 py-2 outline-none ring-1 ring-inset ring-alto placeholder:text-shark/50 focus:ring-2 focus:ring-inset focus:ring-breaker-bay sm:text-sm sm:leading-6"
               />
@@ -127,6 +131,7 @@ const errors = isInputError(result?.error) ? result?.error.fields : {}
                 required
                 name="lastName"
                 autocomplete="family-name"
+                transition:persist
                 placeholder="Last Name"
                 class="text-shadow block w-full border-0 px-3.5 py-2 outline-none ring-1 ring-inset ring-alto placeholder:text-shark/50 focus:ring-2 focus:ring-inset focus:ring-breaker-bay sm:text-sm sm:leading-6"
               />
@@ -136,6 +141,7 @@ const errors = isInputError(result?.error) ? result?.error.fields : {}
               <input
                 type="text"
                 name="company"
+                transition:persist
                 placeholder="Company"
                 class="text-shadow block w-full border-0 px-3.5 py-2 outline-none ring-1 ring-inset ring-alto placeholder:text-shark/50 focus:ring-2 focus:ring-inset focus:ring-breaker-bay sm:text-sm sm:leading-6"
               />
@@ -145,6 +151,7 @@ const errors = isInputError(result?.error) ? result?.error.fields : {}
                 type="text"
                 required
                 name="phone"
+                transition:persist
                 placeholder="Phone"
                 class="text-shadow block w-full border-0 px-3.5 py-2 outline-none ring-1 ring-inset ring-alto placeholder:text-shark/50 focus:ring-2 focus:ring-inset focus:ring-breaker-bay sm:text-sm sm:leading-6"
               />
@@ -154,6 +161,7 @@ const errors = isInputError(result?.error) ? result?.error.fields : {}
                 type="email"
                 required
                 name="email"
+                transition:persist
                 placeholder="Email"
                 class="text-shadow block w-full border-0 px-3.5 py-2 outline-none ring-1 ring-inset ring-alto placeholder:text-shark/50 focus:ring-2 focus:ring-inset focus:ring-breaker-bay sm:text-sm sm:leading-6"
               />
@@ -164,6 +172,7 @@ const errors = isInputError(result?.error) ? result?.error.fields : {}
                 name="comments"
                 placeholder="Message"
                 class="text-shadow block w-full border-0 px-3.5 py-2 outline-none ring-1 ring-inset ring-alto placeholder:text-shark/50 focus:ring-2 focus:ring-inset focus:ring-breaker-bay sm:text-sm sm:leading-6"
+                transition:persist
                 cols="30"
                 rows="5"></textarea>
             </Field>
