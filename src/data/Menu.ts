@@ -54,7 +54,7 @@ const menu: Menu = [
   },
   {
     title: "Company",
-    href: "/company",
+    href: "/company/about-us",
     children: [
       {
         title: "About Us Overview",
@@ -72,7 +72,7 @@ const menu: Menu = [
       },
       {
         title: "Partner with us",
-        href: "/company/parther",
+        href: "/company/partner",
         description:
           "Discover the rewards of connecting your clients or organization members with Integri services as a channel partner.",
         icon: "lucide:handshake"

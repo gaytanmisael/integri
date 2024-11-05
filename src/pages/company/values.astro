@@ -1,0 +1,151 @@
+---
+import { Picture } from "astro:assets"
+
+import Base from "@layouts/Base.astro"
+
+import why from "@assets/why.jpg"
+---
+
+<Base>
+  <section class="relative bg-catskill-white py-12 md:py-16 lg:py-32">
+    <div class="container md:max-lg:max-w-full">
+      <div class="w-full text-center">
+        <h1 class="text-5xl font-bold">
+          We’re changing the way people connect
+        </h1>
+        <p class="mt-4">
+          Cupidatat minim id magna ipsum sint dolor qui. Sunt sit in quis
+          cupidatat mollit aute velit. Et labore commodo nulla aliqua proident
+          mollit ullamco exercitation tempor. Sint aliqua anim nulla sunt mollit
+          id pariatur in voluptate cillum. Eu voluptate tempor esse minim amet
+          fugiat veniam occaecat aliqua.
+        </p>
+      </div><!-- /.w-full text-center -->
+    </div><!-- /.container md:max-lg:max-w-full -->
+  </section><!-- /.relative bg-catskill-white py-12 md:py-16 lg:py-32 -->
+
+  <section class="mt-16 md:mt-24 lg:mt-32">
+    <div class="container md:max-lg:max-w-full">
+      <p class="w-full capitalize text-breaker-bay">.who we are</p>
+      <h2
+        class="w-full text-4xl font-bold capitalize md:text-5xl md:leading-none">
+        Our Mission
+      </h2><!-- / -->
+      <div class="mt-6 grid gap-16 md:grid-cols-5">
+        <div class="md:col-span-3">
+          <p class="text-xl">
+            Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At
+            arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae
+            feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget.
+            Eleifend egestas fringilla sapien.
+          </p>
+          <p class="mt-10">
+            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
+            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
+            praesent donec est. Odio penatibus risus viverra tellus varius sit
+            neque erat velit. Faucibus commodo massa rhoncus, volutpat.
+            Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae
+            sed turpis id.
+          </p>
+        </div><!-- /.lg:w-full lg:max-w-4xl flex-1 -->
+        <div class="md:col-span-2 md:grid md:place-content-center">
+          <dl class="space-y-8">
+            <div class="flex flex-col-reverse gap-y-4">
+              <dt class="text-base">
+                Transactions every 24 hours
+              </dt><!-- /.text-base -->
+              <dd class="text-5xl font-semibold -tracking-wide">
+                44 million
+              </dd><!-- /.text-4xl -->
+            </div><!-- /.flex flex-col-reverse gap-y-4 -->
+            <div class="flex flex-col-reverse gap-y-4">
+              <dt class="text-base">
+                Assets under holding
+              </dt><!-- /.text-base -->
+              <dd class="text-5xl font-semibold -tracking-wide">
+                $119 trillion
+              </dd><!-- /.text-4xl -->
+            </div><!-- /.flex flex-col-reverse gap-y-4 -->
+            <div class="flex flex-col-reverse gap-y-4">
+              <dt class="text-base">New users annually</dt><!-- /.text-base -->
+              <dd class="text-5xl font-semibold -tracking-wide">
+                46,000
+              </dd><!-- /.text-4xl -->
+            </div><!-- /.flex flex-col-reverse gap-y-4 -->
+          </dl><!-- / -->
+        </div><!-- /.lg:flex lg:flex-1 lg:justify-center -->
+      </div><!-- /.mt-6 flex flex-col gap-x-8 gap-y-16 lg:flex-row -->
+    </div><!-- /.container md:max-lg:max-w- -->
+  </section><!-- /.mt-16 md:mt-24 lg:mt-32 -->
+
+  <section class="mt-16 md:mt-24 lg:mt-32">
+    <div class="xl:mx-auto xl:max-w-screen-2xl xl:px-8">
+      <Picture
+        src={why}
+        alt=""
+        class="aspect-[5/2] w-full object-cover xl:rounded-3xl"
+      />
+    </div><!-- /.xl:mx-auto -->
+  </section><!-- /.mt-16 md:mt-24 lg:mt-32 -->
+
+  <section class="mt-16 md:mt-24 lg:mt-32">
+    <div class="container md:max-lg:max-w-full">
+      <div class="max-w-2xl lg:mx-0">
+        <p class="w-full capitalize text-breaker-bay">.who we are</p>
+        <h2
+          class="w-full text-4xl font-bold capitalize md:text-5xl md:leading-none">
+          Our Values
+        </h2><!-- / -->
+        <p class="mt-6 text-lg">
+          Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
+          voluptatum cupiditate veritatis in accusamus quisquam.
+        </p>
+      </div><!-- /.mx-auto -->
+
+      <dl class="mt-16 grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <dt class="font-semibold">Be world-class</dt><!-- /.font-semibold -->
+          <dd class="mt-1">
+            Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint
+            et magnam exercitationem quia. Ullam voluptas nihil vitae dicta
+            molestiae et. Aliquid velit porro vero.
+          </dd><!-- /.mt- -->
+        </div>
+        <div>
+          <dt class="font-semibold">Be world-class</dt><!-- /.font-semibold -->
+          <dd class="mt-1">
+            Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint
+            et magnam exercitationem quia. Ullam voluptas nihil vitae dicta
+            molestiae et. Aliquid velit porro vero.
+          </dd><!-- /.mt- -->
+        </div>
+        <div>
+          <dt class="font-semibold">Be world-class</dt><!-- /.font-semibold -->
+          <dd class="mt-1">
+            Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint
+            et magnam exercitationem quia. Ullam voluptas nihil vitae dicta
+            molestiae et. Aliquid velit porro vero.
+          </dd><!-- /.mt- -->
+        </div>
+      </dl><!-- /.mt-10 -->
+    </div><!-- /.container -->
+  </section><!-- /.mt-16 md:mt-24 lg:mt- -->
+
+  <section class="mt-12 bg-catskill-white py-16 md:mt-16 lg:mt-32">
+    <div class="container md:max-lg:max-w-full">
+      <p
+        class="mx-auto max-w-3xl text-center text-xl font-semibold leading-relaxed">
+        “We believe that every employee should be treated with respect and
+        acknowledge that building a workplace that values the worth of each
+        individual takes time, effort and dedication.”
+      </p><!-- /.text- -->
+      <p class="mb-0 mt-4 text-center text-pale-sky">
+        <span class="text-lg font-bold text-breaker-bay"
+          >Jennifer Almendarez</span
+        ><!-- /.text-breaker- -->
+        <br />
+        Chairman and CEO
+      </p><!-- /.mt-4 mb-0 text-center -->
+    </div><!-- /.container -->
+  </section><!-- /.mt-12 bg-catskill-white md:mt-16 lg:mt-32 -->
+</Base>
